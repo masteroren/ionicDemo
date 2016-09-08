@@ -9,17 +9,17 @@ export class HomePage {
   scanText: string;
 
   constructor(private navCtrl: NavController) {
-  
+
   }
 
-  scan(){
+  scan() {
 
     this.scanText = "Scaning...";
 
     BarcodeScanner.scan().then((barcodeData) => {
       this.scanText = "Scan Finished";
     }, (err) => {
-        this.scanText = "Scan error: " + err;
+      this.scanText = "Scan error: " + err;
     });
   }
 }
